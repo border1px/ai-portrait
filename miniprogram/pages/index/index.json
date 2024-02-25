@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "ant-button": "antd-mini/Button/index"
+    "ant-button": "antd-mini/Button/index",
+    "ant-tabs": "antd-mini/Tabs/index",
+    "ant-container": "antd-mini/Container/index",
+    "image-input": "/components/imageInput/index",
+    "image-output": "/components/imageOutput/index"
   }
 }

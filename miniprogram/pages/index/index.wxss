@@ -1,1 +1,78 @@
 /* pages/index/index.wxss */
+
+.container {
+  /* padding: 0 12px; */
+}
+ant-container {
+  width: 100%;
+}
+.tabs {
+  position: sticky;
+  top: -1px;
+  z-index: 999;
+}
+.tabs-con {
+  padding: 0 10px;
+  color: #999999;
+  background-color: #ffffff;
+}
+.intro {
+  color: #333333;
+  padding: 20px;
+  height: 100px;
+}
+.tab-con {
+  display: flex;
+  justify-content: space-around;
+}
+.tab-con-item {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-con-item-img {
+  width: 220rpx;
+}
+.tab-con.active > .tab-con-item.active {
+  border: 2px solid #1677FF;
+  border-radius: 5px;
+}
+
+.tabs-bar {
+  padding: 5px 10px 0 10px;
+  margin-bottom: 12px;
+}
+.tabs-bar-con {
+  border-radius: 4px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  background-color: #F2F2F2;
+}
+.tabs-bar-l {
+  display: flex;
+  align-items: center;
+}
+.tabs-bar-tag {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 3px;
+  border-radius: 4px;
+  background-color: orange;
+}
+
+/* 工作区 */
+.work-con {
+  display: flex;
+  justify-content: space-between;
+}
+.work-item {
+  width: 47%;
+  height: 450rpx;
+  border: 2px dashed #F2F2F2;
+  border-radius: 5px;
+}

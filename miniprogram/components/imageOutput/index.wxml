@@ -1,0 +1,12 @@
+<view class="image-box" bindtap="chooseImage">
+  <image
+    wx:if="{{images.length}}"
+    class="image" 
+    mode="widthFix" 
+    src="{{images[0]}}" />
+  <view wx:else class="holder">
+    <image src="../../images/iids/holder-img.png" mode="widthFix" class="holder-img"/>
+    <view class="holder-tip">输出图片</view>
+    <view class="holder-tip-desc">图片生成需要一定时间</view>
+  </view>
+</view>

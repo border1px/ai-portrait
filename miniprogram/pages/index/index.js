@@ -1,66 +1,112 @@
-// pages/index/index.js
+const utils = require('../../utils/utils');
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    currentTab: 0,
+    currentItem: 0,
+    itemDesc: '',
+    tabs: [
+      { 
+        id:1,
+        title: `推荐`, 
+        subTitle: "Recommend",
+        items: [
+          {
+            id: 100,
+            code: 'A100',
+            image_url: '../../images/iids/iid-1.jpg',
+            title: '推荐综合模型-写鸭MTVG8-01',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          },
+          {
+            id: 101,
+            code: 'A101',
+            image_url: '../../images/iids/iid-2.jpg',
+            title: '推荐综合模型-写鸭MTVG8-02',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          },
+          {
+            id: 102,
+            code: 'A102',
+            image_url: '../../images/iids/iid-3.jpg',
+            title: '推荐综合模型-写鸭MTVG8-03',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          }
+        ]
+      },
+      { 
+        id:2,
+        title: `时尚`, 
+        subTitle: "Fashion",
+        items: [
+          {
+            id: 100,
+            code: 'A100',
+            image_url: '../../images/iids/iid-4.jpg',
+            title: '时尚综合模型-写鸭MTVG8-01',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          },
+          {
+            id: 101,
+            code: 'A101',
+            image_url: '../../images/iids/iid-5.jpg',
+            title: '时尚综合模型-写鸭MTVG8-02',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          },
+          {
+            id: 102,
+            code: 'A102',
+            image_url: '../../images/iids/iid-6.jpg',
+            title: '时尚综合模型-写鸭MTVG8-03',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          }
+        ]
+      },
+      { id:3, title: `民族`, subTitle: "Fashion" },
+      { id:4, title: `线条`, subTitle: "Fashion" }
+    ],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onItemChange(e) {
+    const { tindex, index } = e.currentTarget.dataset;
+    const desc = this.data.tabs[tindex].items[index].title;
+    this.setData({ 
+      currentItem: index,
+      itemDesc: desc
+      // `tabs[${tindex}].items[$index]`: true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onSwipeChange(e) {
+    this.setData({ currentTab: e.detail.current })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  async onTabChange(currentTab) {
+    this.setData({ currentTab: currentTab.detail });
+    utils.pageScrollTo(Math.min(this.tabsTop, this.pageScrollTop));
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  onPageScroll(e) {
+    this.pageScrollTop = e.scrollTop;
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  async onReady() {
+    this.tabsTop = (await utils.getBoundingClientRect('.tabs', this)).top;
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  onLoad() {
+    console.log('onLoad')
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
-})
+});

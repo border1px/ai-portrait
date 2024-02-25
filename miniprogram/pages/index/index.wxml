@@ -1,3 +1,71 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
-<ant-button type="primary" bind:tap="handleTap">主要按钮</ant-button>
+<view class="container">
+
+<view class="intro">
+  tabs 吸顶模式， 滑动到最顶部会吸顶， 切换tab content会滚动到最顶部
+</view>
+
+<ant-tabs 
+  type="mixin"
+  className="tabs" 
+  items="{{ tabs }}" 
+  current="{{ currentTab }}" 
+  bind:change="onTabChange"
+>
+<swiper
+  class="tabs-con"
+  current="{{ currentTab }}"
+  autoplay="{{ false }}"
+  vertical="{{ false }}"
+  circular="{{ false }}"
+  bind:change="onSwipeChange">
+    <swiper-item 
+      wx:for="{{ tabs }}"
+      wx:for-index="tIndex"
+      wx:for-item="tab"
+      wx:key="tab"
+      class="tab-con {{ currentTab == tIndex ? 'active' : ''}}">
+      <view 
+        wx:for="{{ tab.items }}" 
+        wx:for-item="item"
+        wx:for-index="index" 
+        wx:key="item"
+        data-tindex="{{ tIndex }}"
+        data-index="{{ index }}"
+        bindtap="onItemChange"
+        class="tab-con-item {{ currentItem == index ? 'active' : ''}}"
+      >
+        <image src="{{ item.image_url }}" mode="widthFix" class="tab-con-item-img"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- tabs工具条 -->
+  <view class="tabs-bar">
+    <view class="tabs-bar-con">
+      <view class="tabs-bar-l">
+        <view class="tabs-bar-tag">通用</view>
+        <view class="tabs-bar-txt">{{ itemDesc }}</view>
+      </view>
+      <view class="tabs-bar-r">已选择</view>
+    </view>
+  </view>
+  
+</ant-tabs>
+
+<!-- <view class="container"> -->
+  <ant-container headerInBox="{{ false }}">
+    <view slot="title"><view>人像 & 参考图</view></view>
+    <view slot="headerRight"></view>
+    <view class="work-con">
+      <view class="work-item work_input">
+        <image-input></image-input>
+      </view>
+      <view class="work-item work_output">
+        <image-output></image-output>
+      </view>
+    </view>
+  </ant-container>
+<!-- </view> -->
+
+</view>
