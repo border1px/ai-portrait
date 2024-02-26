@@ -80,8 +80,21 @@ Page({
           }
         ]
       },
-      { id:3, title: `民族`, subTitle: "Fashion" },
-      { id:4, title: `线条`, subTitle: "Fashion" }
+      { id:3, title: `民族`, subTitle: "Fashion",
+        items: [
+          {
+            id: 102,
+            code: 'A102',
+            image_url: '../../images/iids/iid-6.jpg',
+            title: '时尚综合模型-写鸭MTVG8-03',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          }
+        ]
+      },
+      // { id:4, title: `自定义`, subTitle: "Custom" }
     ],
   },
   onItemChange(e) {

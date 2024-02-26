@@ -5,6 +5,8 @@
   tabs 吸顶模式， 滑动到最顶部会吸顶， 切换tab content会滚动到最顶部
 </view>
 
+<style-tabs tabs="{{tabs}}"></style-tabs>
+
 <ant-tabs 
   type="mixin"
   className="tabs" 
@@ -53,7 +55,6 @@
   
 </ant-tabs>
 
-<!-- <view class="container"> -->
   <ant-container headerInBox="{{ false }}">
     <view slot="title"><view>人像 & 参考图</view></view>
     <view slot="headerRight"></view>
@@ -66,6 +67,5 @@
       </view>
     </view>
   </ant-container>
-<!-- </view> -->
 
 </view>

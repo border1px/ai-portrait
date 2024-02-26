@@ -1,5 +1,8 @@
 /* pages/index/index.wxss */
 
+style-tabs{
+  width: 100%;
+}
 .container {
   /* padding: 0 12px; */
 }

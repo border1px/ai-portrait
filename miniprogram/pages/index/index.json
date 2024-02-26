@@ -4,6 +4,7 @@
     "ant-tabs": "antd-mini/Tabs/index",
     "ant-container": "antd-mini/Container/index",
     "image-input": "/components/imageInput/index",
-    "image-output": "/components/imageOutput/index"
+    "image-output": "/components/imageOutput/index",
+    "style-tabs": "/components/styleTabs/index"
   }
 }
