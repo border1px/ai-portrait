@@ -1,6 +1,48 @@
 <view class="style-tabs">
-  <view wx:for="{{tabs}}" wx:for-item="tab" wx:for-index="index" class="style-tab {{index === tabIndex ? 'active' : ''}}" bind:tap="onTabChange" data-index="{{index}}">
-    <view class="tab-title">{{tab.title}}</view>
-    <view class="tab-subtitle">{{tab.subTitle}}</view>
+  <view class="tabs">
+    <view wx:for="{{tabs}}" wx:for-item="tab" wx:for-index="index" class="style-tab {{index === tabIndex ? 'active' : ''}}" bind:tap="onTabChange" data-index="{{index}}">
+      <view class="tab-title">{{tab.title}}</view>
+      <view class="tab-subtitle">{{tab.subTitle}}</view>
+    </view>
+  </view>
+
+  <view class="tabs-con">
+    <swiper
+      wx:if="{{tabIndex === tIndex}}"
+      autoplay="{{ false }}"
+      vertical="{{ false }}"
+      circular="{{ false }}"
+      bind:change="onSwipeChange"
+      wx:for="{{ tabs }}"
+      wx:for-index="tIndex"
+      wx:for-item="tab"
+      wx:key="tab"
+    >
+      <swiper-item class="tab-con {{ tabIndex == tIndex ? 'active' : ''}}">
+        <view
+          wx:for="{{ tab.items }}" 
+          wx:for-item="item"
+          wx:for-index="index" 
+          wx:key="item"
+          data-tindex="{{ tIndex }}"
+          data-index="{{ index }}"
+          bindtap="onItemChange"
+          class="tab-con-item {{ itemIndex == index ? 'active' : ''}}"
+        >
+          <image src="{{ item.image_url }}" mode="widthFix" class="tab-con-item-img"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+
+    <!-- tabs工具条 -->
+    <view class="tabs-bar">
+      <view class="tabs-bar-con">
+        <view class="tabs-bar-l">
+          <view class="tabs-bar-tag">通用</view>
+          <view class="tabs-bar-txt">{{ itemDesc }}</view>
+        </view>
+        <view class="tabs-bar-r">已选择</view>
+      </view>
+    </view>
   </view>
 </view>

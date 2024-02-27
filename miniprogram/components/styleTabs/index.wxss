@@ -1,10 +1,14 @@
 .style-tabs {
-  box-sizing: border-box;
+  width: 100%;
+  background-color: #FFF;
+  padding-bottom: 10px;
+}
+.tabs {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  box-sizing: border-box;
   padding: 15px 15px;
-  background-color: #FFF;
+  justify-content: space-between;
 }
 .style-tab {
   flex:1;
@@ -28,4 +32,63 @@
 }
 .custom {
   
+}
+
+.tabs-con {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10px;
+  color: #999999;
+  background-color: #ffffff;
+}
+swiper {
+  width: 100%;
+}
+.intro {
+  color: #333333;
+  padding: 20px;
+  height: 100px;
+}
+.tab-con {
+  display: flex;
+  justify-content: space-around;
+}
+.tab-con-item {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-con-item-img {
+  width: 220rpx;
+}
+.tab-con.active > .tab-con-item.active {
+  border: 2px solid #1677FF;
+  border-radius: 5px;
+}
+
+.tabs-bar {
+  padding: 5px 5px 0 5px;
+}
+.tabs-bar-con {
+  border-radius: 4px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  background-color: #F2F2F2;
+}
+.tabs-bar-l {
+  display: flex;
+  align-items: center;
+}
+.tabs-bar-tag {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 3px;
+  border-radius: 4px;
+  color: #FFF;
+  background-color: orange;
 }

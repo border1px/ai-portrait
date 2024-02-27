@@ -40,7 +40,7 @@ Page({
             sort: 0,
             is_new: true,
             active: false
-          }
+          },
         ]
       },
       { 
