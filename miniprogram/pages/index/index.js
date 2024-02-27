@@ -94,7 +94,7 @@ Page({
           }
         ]
       },
-      // { id:4, title: `自定义`, subTitle: "Custom" }
+      { id:4, title: `自定义`, subTitle: "Custom" }
     ],
   },
   onItemChange(e) {
@@ -108,6 +108,9 @@ Page({
   },
   onSwipeChange(e) {
     this.setData({ currentTab: e.detail.current })
+  },
+  onStyleTabChange(e) {
+    this.setData({ currentTab: e.detail });
   },
   async onTabChange(currentTab) {
     this.setData({ currentTab: currentTab.detail });

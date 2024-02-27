@@ -5,7 +5,6 @@
   justify-content: space-between;
   padding: 15px 15px;
   background-color: #FFF;
-  margin-bottom: 20px;
 }
 .style-tab {
   flex:1;
@@ -13,9 +12,19 @@
   flex-direction: column;
   align-items: center;
 }
+.tab-title{
+  font-size: 17px;
+}
 .tab-subtitle {
-  font-size: 13px;
+  font-size: 12px;
   color: #999;
+}
+.style-tab.active .tab-title {
+  color: #1677FF;
+  font-weight: bold;
+}
+.style-tab.active .tab-subtitle {
+  color: #1677FF;
 }
 .custom {
   

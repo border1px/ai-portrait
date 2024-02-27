@@ -3,9 +3,6 @@
 style-tabs{
   width: 100%;
 }
-.container {
-  /* padding: 0 12px; */
-}
 ant-container {
   width: 100%;
 }
@@ -15,9 +12,14 @@ ant-container {
   z-index: 999;
 }
 .tabs-con {
+  box-sizing: border-box;
+  width: 100%;
   padding: 0 10px;
   color: #999999;
   background-color: #ffffff;
+}
+swiper {
+  width: 100%;
 }
 .intro {
   color: #333333;

@@ -1,10 +1,6 @@
 <view class="style-tabs">
-  <view wx:for="{{tabs}}" wx:for-item="tab" wx:for-index="index" class="style-tab" bind:tap="onTabChange" data-index="{{index}}">
+  <view wx:for="{{tabs}}" wx:for-item="tab" wx:for-index="index" class="style-tab {{index === tabIndex ? 'active' : ''}}" bind:tap="onTabChange" data-index="{{index}}">
     <view class="tab-title">{{tab.title}}</view>
     <view class="tab-subtitle">{{tab.subTitle}}</view>
-  </view>
-  <view class="style-tab custom" bind:tap="onTabChange" data-index="{{tabs.length}}">
-    <view class="tab-title">自定义</view>
-    <view class="tab-subtitle">Custom</view>
   </view>
 </view>

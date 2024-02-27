@@ -8,8 +8,9 @@ Component({
   },
   methods: {
     onTabChange(e) {
-      console.log(e.currentTarget.dataset)
       let { index } = e.currentTarget.dataset
+      this.setData({ tabIndex: index })
+      this.triggerEvent('change', this.data.tabIndex)
     }
   }
 })
