@@ -41,6 +41,36 @@ Page({
             is_new: true,
             active: false
           },
+          {
+            id: 100,
+            code: 'A100',
+            image_url: '../../images/iids/iid-4.jpg',
+            title: '时尚综合模型-写鸭MTVG8-01',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          },
+          {
+            id: 101,
+            code: 'A101',
+            image_url: '../../images/iids/iid-5.jpg',
+            title: '时尚综合模型-写鸭MTVG8-02',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          },
+          {
+            id: 102,
+            code: 'A102',
+            image_url: '../../images/iids/iid-6.jpg',
+            title: '时尚综合模型-写鸭MTVG8-03',
+            desc: '',
+            sort: 0,
+            is_new: true,
+            active: false
+          }
         ]
       },
       { 

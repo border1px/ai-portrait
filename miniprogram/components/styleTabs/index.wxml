@@ -7,42 +7,44 @@
   </view>
 
   <view class="tabs-con">
-    <swiper
-      wx:if="{{tabIndex === tIndex}}"
-      autoplay="{{ false }}"
-      vertical="{{ false }}"
-      circular="{{ false }}"
-      bind:change="onSwipeChange"
-      wx:for="{{ tabs }}"
-      wx:for-index="tIndex"
-      wx:for-item="tab"
-      wx:key="tab"
-    >
-      <swiper-item class="tab-con {{ tabIndex == tIndex ? 'active' : ''}}">
-        <view
-          wx:for="{{ tab.items }}" 
-          wx:for-item="item"
-          wx:for-index="index" 
-          wx:key="item"
-          data-tindex="{{ tIndex }}"
-          data-index="{{ index }}"
-          bindtap="onItemChange"
-          class="tab-con-item {{ itemIndex == index ? 'active' : ''}}"
-        >
-          <image src="{{ item.image_url }}" mode="widthFix" class="tab-con-item-img"></image>
+    <scroll-view
+      scroll-x 
+      enable-flex 
+      class="tab-con {{ tabIndex == tIndex ? 'active' : ''}}"
+      wx:for="{{tabs}}"
+      hidden="{{tabIndex !== tIndex}}"
+      wx:for-index="tIndex" 
+      wx:for-item="tab" 
+      wx:key="tab">
+      <view wx:if="{{tabIndex === tabs.length-1}}" class="tab-con-custom">
+        <view class="tab-con-custom-l">
+          <image-input></image-input>
         </view>
-      </swiper-item>
-    </swiper>
-
-    <!-- tabs工具条 -->
-    <view class="tabs-bar">
-      <view class="tabs-bar-con">
-        <view class="tabs-bar-l">
-          <view class="tabs-bar-tag">通用</view>
-          <view class="tabs-bar-txt">{{ itemDesc }}</view>
-        </view>
-        <view class="tabs-bar-r">已选择</view>
+        <textarea placeholder="用语言描述画面" class="tab-con-custom-r" />
       </view>
+      <view
+        wx:for="{{ tab.items }}" 
+        wx:for-item="item"
+        wx:for-index="index" 
+        wx:key="item"
+        data-tindex="{{ tIndex }}"
+        data-index="{{ index }}"
+        bindtap="onItemChange"
+        class="tab-con-item {{ itemIndex == index ? 'active' : ''}}"
+      >
+        <image src="{{ item.image_url }}" mode="widthFix" class="tab-con-item-img"></image>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- tabs工具条 -->
+  <view class="tabs-bar">
+    <view class="tabs-bar-con">
+      <view class="tabs-bar-l">
+        <view class="tabs-bar-tag">通用</view>
+        <view class="tabs-bar-txt">{{ itemDesc }}</view>
+      </view>
+      <view class="tabs-bar-r">已选择</view>
     </view>
   </view>
 </view>

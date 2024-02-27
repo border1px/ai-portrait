@@ -1,13 +1,18 @@
+scroll-view{
+  white-space: nowrap;
+}
+
 .style-tabs {
   width: 100%;
   background-color: #FFF;
-  padding-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 .tabs {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 15px 15px;
+  padding: 6px 0 10px 0;
   justify-content: space-between;
 }
 .style-tab {
@@ -15,6 +20,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.style-tab:last-child {
+  border-left: 1px dashed #ccc;
 }
 .tab-title{
   font-size: 17px;
@@ -33,42 +41,42 @@
 .custom {
   
 }
-
-.tabs-con {
-  box-sizing: border-box;
+.tab-con-custom {
   width: 100%;
-  padding: 0 10px;
-  color: #999999;
-  background-color: #ffffff;
-}
-swiper {
-  width: 100%;
-}
-.intro {
-  color: #333333;
-  padding: 20px;
-  height: 100px;
-}
-.tab-con {
   display: flex;
-  justify-content: space-around;
 }
-.tab-con-item {
+.tab-con-custom-l{
+  width: 48%;
+  height: 450rpx;
+}
+.tab-con-custom-r{
+  border: 2px solid #ccc;
   flex:1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 450rpx;
+}
+
+.tab-con-item {
+  display: inline-block;
+  width: 42%;
+  margin-right: 6px;
+  border-radius: 4px;
 }
 .tab-con-item-img {
-  width: 220rpx;
+  width: 100%;
+  display: block;
+  border-radius: 2px;
 }
-.tab-con.active > .tab-con-item.active {
+.tab-con.active .tab-con-item.active {
   border: 2px solid #1677FF;
-  border-radius: 5px;
 }
 
+/* 工具条 */
 .tabs-bar {
-  padding: 5px 5px 0 5px;
+  margin-top: 5px;
 }
 .tabs-bar-con {
   border-radius: 4px;

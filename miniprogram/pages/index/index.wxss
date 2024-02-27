@@ -10,8 +10,8 @@ ant-container {
 }
 style-tabs {
   width: 100%;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
 }
 /* 工作区 */
 .work-con {
@@ -19,8 +19,6 @@ style-tabs {
   justify-content: space-between;
 }
 .work-item {
-  width: 47%;
+  width: 48%;
   height: 450rpx;
-  border: 2px dashed #F2F2F2;
-  border-radius: 5px;
 }
